@@ -1,0 +1,48 @@
+一、目录说明：
+Weibo_actors(微博演员信息获取)
+	actor_page.py---代码主文件
+	auto_star.py---入口文件
+	login.py---微博自动登录代码
+	star.sh---程序启动脚本
+weibo_movie_comments（微博电影评论获取、电影简介获取）
+	get_comments.py---代码主文件
+	auto_star.py---入口文件
+	login.py---微博自动登录代码
+	star.sh---程序启动脚本
+weibo_userpage（微博用户页面）
+ 	userpage.py---代码主文件
+	auto_star.py---入口文件
+	send_mail.py---邮件提醒代码
+	login.py---微博自动登录代码
+	star.sh---程序启动脚本
+
+二、代码说明
+1、Weibo_actors(微博演员信息获取)
+	通过演员列表，获取演员微博主页源代码，再通过匹配相关信息。	
+2、weibo_movie_comments（微博电影评论获取、电影简介获取）
+	通过电影名字，获取电影专栏里的电影评论。
+3、weibo_userpage（微博用户页面）
+	通过电影评论用户链接，获取电影微博主页，信息页和关注页。
+三、使用说明
+	使用说明：
+
+	右键login.py文件----》打开方式----》gedit，对以下语句做修改如下：
+	def login(browser,username = '此处填写你的微博账号',password = '此处为微博密码'):		#注意是在''内写,保留''。
+	ctrl+s保存并退出
+	右键star.sh--->打开方式----》gedit,对文档内的提示语句做修改，修改为star.sh文件所在路径
+	ctrl+t打开终端，依次输入： 
+	cd 你的star.sh文件所在路径
+	sudo chmod 777 star.sh
+	sudo chmod 777 no.sh
+	然后输入：
+	sh star.sh
+	
+	代码开始运行，不过这次打开一个终端，终端每隔一段时间就会自动重启代码，顺便清除进程。注意！！！！！
+	注意、！！！！！
+注意！！！！
+他会杀掉所有的火狐浏览器的进程！所有的python的进程，所有pycharm....所以有点gg，如果你想保留，就是你在用pycharm什么的，或者浏览器，那么右键用gredit打开kill和killall文件。
+注释掉 main 函数里面的：
+	kill_firefox()-----杀掉firefox的
+	kill_Web()------杀掉浏览器的什么的，反正要关掉就和那个firefox一起关掉。
+	kill_java()------杀掉pycharm的	
+	
